@@ -21,8 +21,18 @@ public class AppTest extends FluentTest {
   public static ServerRule server = new ServerRule();
 
   @Test
-  public void rootTest() {
-      goTo("http://localhost:4567/");
-      assertThat(pageSource()).contains("Leap year detector");
+  public void checkAllergyCounter_1_Eggs() {
+    Allergies testApp = new Allergies();
+    ArrayList<String> arrayTest = new ArrayList<String>();
+    arrayTest.add("eggs");
+    assertEquals(arrayTest, testApp.checkAllergy(1));
+  }
+
+  @Test
+  public void checkAllergyCounter_2_Peanuts() {
+    Allergies testApp = new Allergies();
+    ArrayList<String> arrayTest = new ArrayList<String>();
+    arrayTest.add("peanuts");
+    assertEquals(arrayTest, testApp.checkAllergy(2));
   }
 }
